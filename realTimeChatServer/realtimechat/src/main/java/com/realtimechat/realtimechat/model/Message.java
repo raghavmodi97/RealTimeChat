@@ -21,4 +21,5 @@ public class Message {
     private Long senderId;
     private String content;
     private Instant createdAt = Instant.now();
+    private String tempId;
 }

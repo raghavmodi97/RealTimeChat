@@ -18,8 +18,9 @@ public class ChatService {
         message.setConversationId(incomingMessage.getConversationId());
         message.setContent(incomingMessage.getContent());
         message.setSenderId(incomingMessage.getSenderId());
-        Message savedMessage=messageRepository.save(message);
-        return savedMessage;
+        message.setTempId(incomingMessage.getTempId());
+        return messageRepository.save(message);
+
     }
 
     public MessageDTO toDTO(Message message,String senderName){
@@ -30,6 +31,7 @@ public class ChatService {
         dto.setCreatedAt(message.getCreatedAt());
         dto.setId(message.getId());
         dto.setSenderId(message.getSenderId());
+        dto.setTempId(message.getTempId());
         return dto;
     }
 }
