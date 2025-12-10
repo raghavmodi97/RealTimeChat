@@ -1,0 +1,137 @@
+.messageListPlaceholder {
+    display: flex;
+    flex-direction: column;
+}
+.message {
+    max-width: 75%;
+    padding: 8px 12px;
+    border-radius: 12px;
+    margin: 6px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.message.left {
+    background-color: #e5e5e5;
+    align-self: flex-start;
+}
+
+.message.right {
+    background-color: #c2e8ff;
+    align-self: flex-end;
+}
+.msg-content {
+    font-size: 15px;
+    text-align: left;
+    white-space: pre-wrap; /* keeps line breaks */
+}
+
+.msg-meta {
+    display: flex;
+    justify-content: flex-end;   /* ⭐ Push timestamp + ticks to the right */
+    align-items: center;          /* Vertically center items */
+    gap: 4px;
+    font-size: 11px;
+    color: #555;
+    margin-top: 3px;
+}
+
+.status {
+    font-size: 12px;
+    opacity: 0.8;
+}
+.timestamp {
+    font-size: 11px;
+    color: #555;
+    margin-top: 4px;
+    text-align: right;
+}
+
+.chat-header{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid lightgrey;
+}
+
+.back-button{
+    background: transparent;
+    cursor: pointer;
+    font-size: large;
+    margin-right: 8px;
+    border: none;
+}
+
+.chat-title{
+    font-weight: bold;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.user-status{
+    font-size: small;
+    color: green;
+}
+.user-status::before {
+    content: "● ";
+}
+.chat-window{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color:#f5f5f5;
+}
+
+.chat-body{
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+
+}
+
+.input-row{
+    display: flex;
+    padding: 10px;
+    background-color: white;
+    border-top: 1px solid black;
+}
+
+textarea{
+    resize:none;
+    width: 100%;
+    border-radius: 5px;
+    padding: 6px;
+    margin-right: 8px;
+}
+button{
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    color: #666;
+    font-size: 14px;
+}
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: #666;
+    border-radius: 50%;
+    opacity: 0.2;
+    animation: typingBlink 1.4s infinite ease-in-out;
+}
+.dot:nth-child(1) { animation-delay: 0s; }
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typingBlink {
+    0% { opacity: 0.2; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(-2px); }
+    100% { opacity: 0.2; transform: translateY(0); }
+}
+
